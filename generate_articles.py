@@ -5,8 +5,6 @@ import urllib.parse
 from datetime import datetime
 import secrets
 
-gnews_categories = ["general", "world", "business", "technology", "entertainment", "sports", "science", "health"]
-
 def gnews_top_news(category='general', q=None):
     apikey = secrets.gnews_apikey
     url = f"https://gnews.io/api/v4/top-headlines?category={category}&lang=en&country=us&max=10&apikey={apikey}"
