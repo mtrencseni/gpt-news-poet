@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPT News Poet - {{ dt }}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sumana">
+<link rel="stylesheet" href="/style.css">
+<script src="/script.js"></script>
+<link rel="shortcut icon" href="/gpt-news-poet.jpg" type="image/x-icon">
+<link rel="icon" href="/gpt-news-poet.jpg" type="image/x-icon">
+<meta property="og:site_name" content="GPT News Poet"/>
+<meta property="og:title" content="Silly news poems by GPT."/>
+<meta property="og:description" content="Silly news poems by GPT."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://gptnewsbard.bytepawn.com"/>
+<meta property="article:author" content="https://bytepawn.com/author/marton-trencseni.html">
+<meta property="og:image" content="/gpt-news-poet.jpg"/>
+</head>
+<body>
+  <div class="container">
+    <h1>{{ dt }}</h1>
+    {% for article in articles %}
+    <div class="poem-container" onmouseover="showInfo(this)" onmouseout="hideInfo(this)">
+      <pre class="poem">{{ article.poem }}</pre>
+      <span class="info">
+        <h2 class="title">{{ article.source.name }}</h2>
+        <p class="snippet"><b>{{ article.title }}.</b> {{ article.description }} <a href="{{ article.url }}">(link)</a></p>
+      </span>
+    </div>
+    {% endfor %}
+  <br/>
+  <h2><a href="/archive">archive</a></h2>
+  </div>
+</body>
+</html>
